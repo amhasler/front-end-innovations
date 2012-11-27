@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # [HTML5 Boilerplate](http://html5boilerplate.com)
 
 HTML5 Boilerplate is a professional front-end template for building fast,
@@ -61,3 +62,7 @@ you want to write about your project.
 Anyone and everyone is welcome to
 [contribute](/h5bp/html5-boilerplate/blob/master/CONTRIBUTING.md). Hundreds
 of developers have helped make the HTML5 Boilerplate what it is today.
+=======
+front-end-innovations
+=====================
+>>>>>>> e01b1c66984541bd8adc215257a4f3296dbd17e7
