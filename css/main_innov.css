@@ -164,6 +164,7 @@ article#blog{
 	padding-left:20px;
 	margin-bottom:5px;
 	line-height:20px;
+	font-weight:200;
 }
 #entry-title {
 	font-size:28px;
@@ -171,6 +172,10 @@ article#blog{
 	margin:0px;
 	line-height:30px;
 	font-weight:normal;
+}
+
+#style-content {
+	font-weight:bold;
 }
 #time-stamp{
 	color:#CCCCCC;
