@@ -35,8 +35,8 @@ overflow: visible;
     font-weight: 500;
     margin-top:12px;
     padding:0px 10px;
-	font-family: 'Bitter',serif;
-	font-size:20px;
+		font-family: 'Bitter',serif;
+		font-size:20px;
   }
   header.external ul.public_nav li a{
     margin-top:-4px;
@@ -192,6 +192,10 @@ article#blog{
 	font-family: 'Bitter',serif;
 	font-size:20px;
 	font-style:italic;
+}
+
+header #search {
+	margin-top:-5px;
 }
 
 #issue-blog-nav {
