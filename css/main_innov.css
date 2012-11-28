@@ -106,9 +106,9 @@ display: block !important;
 	width:600px;
 }
 .box {
-	top: 80px;
+	top: 75px;
 	background-color:white;
-	height:680px;
+	height:83%;
 	z-index: 5;
 	border: thin solid black;
 }
@@ -128,7 +128,6 @@ display: block !important;
 }
 #not-nav {
 	width:400px;
-	height:auto;
 	margin:25px 20px 20px 25px;
 	padding:5px;
 }
@@ -154,7 +153,7 @@ display: block !important;
 	display:none;
 	
 }
-article#blog{
+#blog {
 	font-family: ‘Times New Roman’, Times, serif;
 }
 #blog-title {
@@ -190,7 +189,7 @@ article#blog{
 	padding-left:5px;
 	overflow: auto;
 	padding:10px;
-	height:340px;
+	height: 370px;
 }
 .nav-font {
 	color: #009DAE;

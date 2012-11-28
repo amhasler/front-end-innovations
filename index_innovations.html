@@ -15,114 +15,15 @@
 		<link rel="stylesheet" href="css/main_innov.css">
 		<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+		
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-		<!--<script type="text/javascript" src="js/panel.js"></script>-->
-		<script type="text/javascript" src="http://projectpageone.com/dev/innovations_new/js/lightbox_me.js"></script>
-		<!--<script type="text/javascript" src="slickbox.js"></script>-->
-		<script type="text/javascript">
-		var ANIMATION_LENGTH = 700;
-
-		$(document).ready(function(){
-			$panel = $('#main_content');
-			$trigger =$('.trigger');
-			$slickbox = $('#issue-list');
-			$toplist = $('#issues-toc');
-			$blogBox = $('#blog-list');
-			$home=$('#home');
-			$about=$('.about_trigger');
-			$aboutpage=$('#about');
-			$homeTrigger=$('.homeTrigger');
-
-			$about.click(function() {
-				$home.fadeOut('slow',function(){
-					$aboutpage.fadeIn();
-				});
-			});
-			
-			$homeTrigger.click(function() {
-				$aboutpage.fadeOut('slow',function(){
-					$home.fadeIn();
-				});
-			});
-			
-			$('.trigger').click(function(e){
-				var isLeft = $panel.css('left')==="20px";
-				var newLeft = (isLeft) ? "30%" : "20px";
-				var delayAmount = 700;
-				var idClicked = e.target.id;
-				
-
-				if (newLeft==="30%") {
-					if ( idClicked==="main"||idClicked==="browse-issues"||idClicked==="innovations-top"||idClicked==="innovations-bottom"||idClicked==="amplify-top"||idClicked==="amplify-bottom"&&$blogBox.css("display")!=="block") {
-						console.log(idClicked);
-						$toplist.fadeOut('slow');
-						$slickbox.hide('slow');
-					} else if ( idClicked==="main2"||idClicked==="browse-blog"||idClicked==="innovations-top"||idClicked==="innovations-bottom"||idClicked==="amplify-top"||idClicked==="amplify-bottom"&&$slickbox.css('display')!=='block'&&idClicked!=="browse-issues") {
-						console.log(idClicked);
-						$blogBox.hide('slow');
-					} else if ($slickbox.css('display')==='block'&&idClicked==="browse-blog") {
-							$slickbox.hide('slow');
-							$blogBox.show('slow');
-							return false;
-					} else if ($blogBox.css('display')==='block'&&idClicked==="browse-issues") {
-						$blogBox.hide('slow');
-						$slickbox.show('slow');
-						$toplist.fadeIn('slow');
-						return false;
-					}
-				} else if (newLeft==="20px"){
-					if (idClicked==="browse-issues") {
-						$slickbox.show('slow');
-						$toplist.fadeIn('slow');
-					} else if (idClicked==="browse-blog") {
-						$blogBox.show('slow');
-					}
-				}
-
-				$panel.animate({'left': newLeft},ANIMATION_LENGTH);
-
-			});
-		});
-		
-		</script>
-		
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-
-		<script type="text/javascript">
-		$(document).ready(function(){
-			$contactButton=$('.contact_trigger');
-			$contactPage=$('#contact');
-			$submit=$('#submit');
-			$confirmation=$('#confirmation');
-			$contactText=$('#contact-text');
-
-			$contactButton.click(function() {
-				$contactPage.lightbox_me();
-			});
-			
-			$submit.click(function() {
-				$contactText.fadeOut(function(){
-					$confirmation.fadeIn(function(){
-						$contactPage.delay(7000).trigger('close');
-					});
-				});
-			});
-			
-		});
-		</script>
-		<script>
-	$(document).ready(function(){
-	    $(function() {
-	        $( "#accordion" ).accordion({
-	            collapsible: true,
-				header: ".topline-issue-info",
-				clearStyle: true
-	        });
-	    });
-	});
-	    </script>
-
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.lightbox_me.js"></script>
+		<script type="text/javascript" src="js/main-slider.js"></script>
+		<script type="text/javascript" src="js/contact.js"></script>
+		<script type="text/javascript" src="js/accordion.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -131,38 +32,6 @@
 		<div id="bg_image_overlay">
 			&nbsp;
 		</div>
-		<!--
-		<div class="navbar navbar-fixed-top">
-		  <div class="navbar-inner">
-		    <div class="container">
-		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </a>
-		      <a class="brand" href="#">Project Name</a>
-		      <div class="nav-collapse">
-		        <ul class="nav">
-		          <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
-		          <li><a href="#">Link</a></li>
-		          <li><a href="#">Link</a></li>
-		          <li><a href="#">Link</a></li>
-		          <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-		            <ul class="dropdown-menu">
-		              <li><a href="#">Action</a></li>
-		              <li><a href="#">Another action</a></li>
-		            </ul>
-		          </li>
-		        </ul>
-		        <form class="navbar-search pull-right" action="">
-		          <input type="text" class="search-query span2" placeholder="Search">
-		        </form>
-		      </div><!-- /.nav-collapse -->
-		    </div><!-- /.container -->
-		  </div><!-- /.navbar-inner -->
-		</div><!-- /.navbar -->
-	-->
 		
 		<header class="external clearfix">
 			<nav class="clearfix header-footer">
@@ -234,20 +103,22 @@
 				</section>
 				<aside id="get-in-touch">
 					<h2>Join Us</h2>
-					<table id="join-us-bar">
-						<tr>
-							<td class="contact_trigger"><a>submission contact</a></td>
-							<td><a href="http://www.mitpressjournals.org/loi/itgg">Subscription Information</a></td>
-							<td id="twitter-information">
-								<p>Twitter</p>
-								<br />
-								<a href="https://twitter.com/innovationsjrnl">Innovations Journal</a>
-								<br />
-								<br />
-								<a href="https://twitter.com/auerswald">Editor/Co-Founder <br /> Phil Auerswald</a>
-							</td>
-						</tr>
-					</table>
+					<div class="row">
+						<div class="span4 contact_trigger">
+							<a>submission<br /> contact</a>
+						</div>
+						<div class="span4">
+							<a href="http://www.mitpressjournals.org/loi/itgg">Subscription<br /> Information</a>
+						</div>
+						<div class="span4" id="twitter-information">
+							<p>Twitter</p>
+							<br />
+							<a href="https://twitter.com/innovationsjrnl">Innovations Journal</a>
+							<br />
+							<br />
+							<a href="https://twitter.com/auerswald">Editor/Co-Founder <br /> Phil Auerswald</a>
+						</div>
+					</div>
 				</aside>
 			</div>
 		</div>
@@ -331,13 +202,9 @@
 				</ul>
 			</nav>
 		</footer>
-				
-			
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src= "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

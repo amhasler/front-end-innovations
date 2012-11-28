@@ -10,20 +10,7 @@ $(document).ready(function(){
 	});
 	
 	$submit.click(function() {
-		$contactText.fadeOut(function(){
-			$confirmation.fadeIn(function(){
-				$contactPage.delay(7000).trigger('close');
-			});
-		});
+		$contactText.trigger('close');
 	});
 });
 
-$(document).ready(function(){
-	$(function() {
-    $( "#accordion" ).accordion({
-        collapsible: true,
-				header: ".topline-issue-info",
-				clearStyle: true
-    });
-	});
-});

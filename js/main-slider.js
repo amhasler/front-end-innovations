@@ -22,21 +22,19 @@ $(document).ready(function(){
 			$home.fadeIn();
 		});
 	});
-	
-	$('.trigger').click(function(e){
+
+	$trigger.click(function(e){
 		var isLeft = $panel.css('left')==="20px";
 		var newLeft = (isLeft) ? "30%" : "20px";
 		var delayAmount = 700;
 		var idClicked = e.target.id;
-		
+		var myClass = $(this).attr("class");
 
 		if (newLeft==="30%") {
-			if ( idClicked==="main"||idClicked==="browse-issues"||idClicked==="innovations-top"||idClicked==="innovations-bottom"||idClicked==="amplify-top"||idClicked==="amplify-bottom"&&$blogBox.css("display")!=="block") {
-				console.log(idClicked);
+			if (idClicked==="main"||idClicked==="browse-issues"&&$blogBox.css("display")!=="block") {
 				$toplist.fadeOut('slow');
 				$slickbox.hide('slow');
-			} else if ( idClicked==="main2"||idClicked==="browse-blog"||idClicked==="innovations-top"||idClicked==="innovations-bottom"||idClicked==="amplify-top"||idClicked==="amplify-bottom"&&$slickbox.css('display')!=='block'&&idClicked!=="browse-issues") {
-				console.log(idClicked);
+			} else if (idClicked==="main2"||idClicked==="browse-blog"&&$slickbox.css('display')!=='block') {
 				$blogBox.hide('slow');
 			} else if ($slickbox.css('display')==='block'&&idClicked==="browse-blog") {
 					$slickbox.hide('slow');
@@ -47,7 +45,7 @@ $(document).ready(function(){
 				$slickbox.show('slow');
 				$toplist.fadeIn('slow');
 				return false;
-			}
+			} 
 		} else if (newLeft==="20px"){
 			if (idClicked==="browse-issues") {
 				$slickbox.show('slow');
@@ -55,10 +53,11 @@ $(document).ready(function(){
 			} else if (idClicked==="browse-blog") {
 				$blogBox.show('slow');
 			}
-		} else if (blogBox.css('display')==='none'&&slickbox.css('display')==='none') {
-			return false;
 		}
-
+		
+		if (myClass==='homeTrigger') {
+			console.log('success');
+		};
 		$panel.animate({'left': newLeft},ANIMATION_LENGTH);
 
 	});
