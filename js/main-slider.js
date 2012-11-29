@@ -25,16 +25,17 @@ $(document).ready(function(){
 
 	$trigger.click(function(e){
 		var isLeft = $panel.css('left')==="20px";
-		var newLeft = (isLeft) ? "30%" : "20px";
+		var newLeft = (isLeft) ? "18%" : "20px";
 		var delayAmount = 700;
 		var idClicked = e.target.id;
 		var myClass = $(this).attr("class");
+		
 
-		if (newLeft==="30%") {
-			if (idClicked==="main"||idClicked==="browse-issues"&&$blogBox.css("display")!=="block") {
+		if (newLeft==="18%") {
+			if (idClicked==="main"||idClicked==="browse-issues"||myClass===("homeTrigger trigger")&&$blogBox.css("display")!=="block") {
 				$toplist.fadeOut('slow');
 				$slickbox.hide('slow');
-			} else if (idClicked==="main2"||idClicked==="browse-blog"&&$slickbox.css('display')!=='block') {
+			} else if (idClicked==="main2"||idClicked==="browse-blog"||myClass===("homeTrigger trigger")&&$slickbox.css('display')!=='block') {
 				$blogBox.hide('slow');
 			} else if ($slickbox.css('display')==='block'&&idClicked==="browse-blog") {
 					$slickbox.hide('slow');
@@ -52,12 +53,12 @@ $(document).ready(function(){
 				$toplist.fadeIn('slow');
 			} else if (idClicked==="browse-blog") {
 				$blogBox.show('slow');
+			} else if (myClass===("homeTrigger trigger")&&$blogBox.css('display')!=='block'&&$slickbox.css('display')!=='block') {
+				console.log(myClass);	
+				return false;
 			}
 		}
 		
-		if (myClass==='homeTrigger') {
-			console.log('success');
-		};
 		$panel.animate({'left': newLeft},ANIMATION_LENGTH);
 
 	});
